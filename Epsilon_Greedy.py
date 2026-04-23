@@ -4,7 +4,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 # Epsilon Greedy Algorithm
-def EpsilonGreedy():
+class EpsilonGreedy:
     def __init__(self, epsilon, count, values):
         self.epsilon = epsilon
         self.count = count
