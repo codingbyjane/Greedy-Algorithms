@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 class EpsilonGreedy:
     def __init__(self, epsilon, count, values):
         self.epsilon = epsilon # Exploration rate, a.k.a the frequency with which one of the options will be chosen (explore/exploit). A number between 0 and 1, where 0 means always exploit and 1 means always explore.
-        self.count = count # Number of times each action has been taken / option has been chosen
+        self.counts = count # Number of times each action has been taken / option has been chosen
         self.values = values # Estimated performance value of each action / option (estimated reward value)
 
     def ind_max(self, x): # Function to find the index of the maximum value in a list, a.k.a, the index of the best performing arm / option
@@ -27,3 +27,4 @@ class EpsilonGreedy:
 
         new_value = ((n - 1) / n) * value + (1 / n) * reward # Update the estimated value of the chosen arm using an incremental formula. This formula calculates a new average based on the previous average (value) and the new reward received from selecting that arm.
         self.values[chosen_arm] = new_value # Update the estimated value for the chosen arm in the values list with the newly calculated value. This allows the algorithm to improve its estimates of the performance of each arm over time as it receives more rewards from selecting different arms.
+        return new_value # Return the updated estimated value for the chosen arm after incorporating the new reward. This can be useful for tracking the performance of each arm over time.
