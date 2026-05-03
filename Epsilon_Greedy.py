@@ -30,4 +30,7 @@ class EpsilonGreedy:
         return new_value # Return the updated estimated value for the chosen arm after incorporating the new reward. This can be useful for tracking the performance of each arm over time.
     
 # Example of creating an instance of the EpsilonGreedy class with an exploration rate of 0.1 and three arms (options) initialized with zero counts and zero estimated values.
-epsilon_greedy_agent = EpsilonGreedy(epsilon=0.1, count=[0, 0, 0], values=[0.0, 0.0, 0.0])
+epsilon_greedy_agent = EpsilonGreedy(epsilon=0.1, count=[0, 0, 0], values=[0.0, 0.0, 0.0]) # Initializing the EpsilonGreedy agent with an exploration rate of 0.1 (10%), and three arms (options) that have been selected 0 times and have an estimated value of 0.0. This sets up the agent to start making decisions based on the epsilon-greedy strategy.
+
+arm = epsilon_greedy_agent.select_arm() # Select an arm (option) using the select_arm method of the EpsilonGreedy agent. This will return the index of the selected arm based on the epsilon-greedy strategy, which may involve either exploitation (choosing the best known arm) or exploration (choosing a random arm).
+print(f"Selected arm: {arm}") # Print the index of the selected arm to the console. This allows us to see which arm was chosen by the epsilon-greedy algorithm based on the current estimates and exploration rate.
