@@ -34,3 +34,6 @@ epsilon_greedy_agent = EpsilonGreedy(epsilon=0.1, count=[0, 0, 0], values=[0.0, 
 
 arm = epsilon_greedy_agent.select_arm() # Select an arm (option) using the select_arm method of the EpsilonGreedy agent. This will return the index of the selected arm based on the epsilon-greedy strategy, which may involve either exploitation (choosing the best known arm) or exploration (choosing a random arm).
 print(f"Selected arm: {arm}") # Print the index of the selected arm to the console. This allows us to see which arm was chosen by the epsilon-greedy algorithm based on the current estimates and exploration rate.
+
+reward = 1.0 # Simulate receiving a reward of 1.0 for selecting the chosen arm. In a real application, this reward would come from the environment based on the action taken by the agent.
+updated_value = epsilon_greedy_agent.update(chosen_arm=arm, reward=reward) # Update the estimated value of the chosen arm using the update method of the EpsilonGreedy agent. This method takes the index of the chosen arm and the reward received as arguments, and it updates the estimated value for that arm based on the new reward.
