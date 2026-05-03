@@ -37,3 +37,5 @@ print(f"Selected arm: {arm}") # Print the index of the selected arm to the conso
 
 reward = 1.0 # Simulate receiving a reward of 1.0 for selecting the chosen arm. In a real application, this reward would come from the environment based on the action taken by the agent.
 updated_value = epsilon_greedy_agent.update(chosen_arm=arm, reward=reward) # Update the estimated value of the chosen arm using the update method of the EpsilonGreedy agent. This method takes the index of the chosen arm and the reward received as arguments, and it updates the estimated value for that arm based on the new reward.
+
+print(f"Updated value for arm {arm}: {updated_value}") # Print the updated estimated value for the chosen arm to the console. This allows us to see how the estimated value for that arm has changed after receiving the new reward and updating the agent's knowledge.
